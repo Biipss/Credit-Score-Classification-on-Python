@@ -1,0 +1,12 @@
+DERIVED Class and CHILD Class:
+Derived class ko object lay base class ko method lai access garna sakxa.
+Derived lay true return garxa.
+
+Numpy:
+It is known as Numerical Python 
+It used for working arrays.	
+   Package:
+	pandas
+	matplotlib
+	Seaborn
+	Scipy

@@ -1,0 +1,186 @@
+STACK
+SPLIT
+PANDAS
+
+hstack():
+hamile paila axis use garthem yo halyo kii pardaina 
+horizontally stack garna use huncha
+first array ko 1st element 2nd array ko 1st element laii sangaii halcha 
+yesma duita concatenate bhayera bascha
+
+vstack():
+vertically assign garcha
+
+
+dstack():
+arr1 = np.array([[1, 2, 3], [4, 5, 6]])
+arr2 = np.array([[7, 8, 9], [10, 11, 12]])
+
+arr = np.vstack((arr1, arr2))
+yesto case ma 1,7 2,8 3,9 huncha 
+
+Splitting an array:
+split ma change garna laii total no of elements should be exactly divisible by no of splits
+testo bhayena bhne error ta audaina tara elements ko number chaii kaam huna sakcha 
+no of elements bhanda badii no of splits halyo bhne empty aucha error chaii audaina
+.array_split() is used to initialize
+
+# Splitteing 1-D arrays
+num_of_splits = 2
+arr = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+new_arr = np.array_split(arr, num_of_splits)
+new_arr
+
+
+# Splitteing 2-D arrays
+num_of_splits = 2
+arr = np.array([[1, 2], [3, 4], [5, 6], [7, 8]])
+new_arr = np.array_split(arr, num_of_splits)
+new_arr
+
+hsplit():horizontally split huncha
+# Splitteing 2-D arrays
+num_of_splits = 2
+arr = np.array([[1, 2], [3, 4], [5, 6], [7, 8]])
+new_arr = np.hsplit(arr, num_of_splits)
+new_arr
+
+vsplit():verticallyy split huncha
+# Splitteing 2-D arrays
+num_of_splits = 2
+arr = np.array([[1, 2], [3, 4], [5, 6], [7, 8]])
+new_arr = np.vsplit(arr, num_of_splits)
+new_arr
+
+dsplit():depth wise split huncha
+# dsplit() works for array with dimension equal or greater than 3.
+num_of_splits = 2
+arr = np.array([[[1, 2], [3, 4]], [[5, 6], [7, 8]]])
+new_arr = np.dsplit(arr, num_of_splits)
+new_arr
+
+imp wala:
+Searching elements in array:
+1D array:
+.where() method use garera khojna milcha
+arr = np.array([1, 2, 3, 4, 5, 3, 3])
+x = np.where(arr == 3) // yo case ma 3 kun kun index ma cha dekhaucha
+
+
+2D array:
+arr = np.array([[1, 2], [3, 4], [3, 6], [7, 8]])
+x = np.where(arr == [3, 4])
+print(x) // output chaii tuple ma aucha
+first ma euta ko index dincha anii tyo particular index ko value chaii pachii dincha
+
+even elements find:
+arr = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+x = np.where(arr%2 == 0)
+
+Sorting numpy:
+sort() method is used to initialize
+# sorting 1-D array int value
+arr = np.array([3, 2, 0, 1])
+print(np.sort(arr))
+
+# sorting boolean array
+arr = np.array([True, False, True])
+print(np.sort(arr))
+
+# sorting string array
+arr = np.array(['Python', 'Java', 'JS', 'Mojo'])
+print(np.sort(arr)) //capital letter laii badii prioritize garcha so JS paila aucha Java bhanda
+
+2D array ko case ma nii same naii huncha
+
+Filtering numpy:
+# hardcoded index
+arr = np.array([41, 42, 43, 44])
+x = [True, False, True, False]
+new_arr = arr[x] //boolean value true bhako matra output print garcha 
+new_arr
+
+# conditional filer with for loop
+arr = np.array([41, 42, 43, 44])
+new_arr = []
+for ele in arr:
+    if ele > 42: //42 bhada greater aucha 
+        new_arr.append(ele)
+print(new_arr)
+
+
+Pandas:
+# import in file to use its features.
+import pandas as pd
+
+# check version
+print(pd.__version__)
+
+Datatypes duita huncha 
+
+series create:
+import pandas as pd
+arr = [1, 2, 3]
+series_1 = pd.Series(arr)
+
+print(type(series_1))
+print(series_1)
+
+Labels:
+index ma hamile custom tarika ma labels halna milcha
+arr = [1, 2, 3]
+labels = ['first', 'second', 'third']
+series_2 = pd.Series(arr, index=labels)
+print(type(series_2))
+print(series_2)
+
+Access value:
+list ma jasarii access garthyo tesari naii garne ho 
+index or label use garera value access garna sakcham
+print(f"first value of series_1: {series_1[0]}")
+
+Creating series from dictionary:
+places_area = {'Kathmandu':1234, 'Pokhara':2345, 'Dharan':3456}
+series_3 = pd.Series(places_area)
+print(series_3)
+
+Creating dataframe from dictionary:
+.DataFrame()
+subject_marks = {
+    'english' : [50, 60, 70, 80 , 90],
+    'math' : [51, 53, 55, 52, 50],
+    'science' : [80, 81, 82, 83, 84],
+    'computer' : [90, 91, 92, 93, 94]
+}
+df = pd.DataFrame(subject_marks)
+print(df)
+
+.loc[[4]] use garera particular data laii retract garna sakcha
+
+
+Column add kasari garne:
+df['column_name'] = [1,2,3,4,5] value_name
+df.head()-le kati ota row herne or kati ota chaiyeko cha tyo mention garne tetii matra dekhaucha anii 
+
+df.tail()-same as head tara tala ko dekhaucha 
+
+n-largest:largest num dekhaucha particular column ko 
+print(df.nlargest(3, ['english']))
+
+n-smallest:smallest num dekhaucha particular column ko 
+print(df.nsmallest(3, ['english']))
+
+
+convert dataframe to numpy:
+to_numpy()
+eg:
+arr = df.to_numpy()
+
+
+creating series using columns of dataframe
+series = pd.Series(df['a'].head())
+df['a']=dataframe ko column access gareko
+
+QUESTION:
+//1. Create a function having variable length parameters.
+//2. Make multiple function calls using multiple number of arguments

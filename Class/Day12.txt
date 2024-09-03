@@ -1,0 +1,37 @@
+import matplotlib.pyplot as plt
+plt.scatter(default_arr, y_test, marker='o', label="Ground Truth")
+plt.scatter(default_arr, y_pred, marker='x', label="Prediction")
+plt.legend()
+plt.grid()
+//range: 0-82
+//first plot-(45.1,47.74)
+
+EVALUATING THE MODEL
+mean_squared_error(MSE) = E(|y_pred - y_test|)/n
+RMSE =np.sqrt(MSE) 
+The difference value betn real value(y_test) and predicted value(y_pred)
+To calculate MSE, add all the difference value and divide by no of elements 
+
+REGRESSION STEPS
+1. Necessary Library Import
+2. Data Load
+3. EDA
+	I. Null-Value Check 
+		-Remove/Fill
+	II. Duplicated Rows
+		-Remove
+4. Feature Engineering(To know feature importance)
+	-Correlation
+	-Removed Poorly Correlated Columns
+5. Split into independent and dependent features(X, y)
+6. Train-Test Split
+	(X_train, X_test),
+	(y_train, y_test)
+7. Create object of class(Class of algorithm)
+8. Fit the data into algorithm(fit())
+9. Check the metrics(Accuracy/Errors)
+
+Regression Problem
+a. MAE
+b. MSE
+c. RMSE

@@ -1,0 +1,115 @@
+Comparison Operator:
+
+Logical Operator:
+
+Identity Operator:
+is- a is b huna lai a ra b same object and same value vako huna parxa, then true hunxa 
+is not - a is not b huna lai same object and same value vako xaina vane, then false hunxa
+
+Membership Operators: elements xa ki xaina vanera check garne 
+array= 1 2 3 5 6 4
+Syntax: 4 in array
+
+in- Returns true when an it contain particular value
+not in- in- Returns false when an it doesnot contain particular value
+
+Complex Data Types:
+Derived data types	
+	Data types-
+	List, 
+	Dictionary: word: sabda  word:key  sabda:value,
+	Tuple: It is a kind of array jun ma naya data add garne sakdaina tara element change garna sakxau,
+	Set: unique elements insert garne.
+
+Doesnot have in-bulit support of array
+
+1.List: a[] or list()
+
+type() function:
+b= list()
+print(type(b))
+
+a= list()
+print(type(a))
+
+append() method: jun sukai datatype insert garna sakxau
+
+Integer:
+print('Value of a before:', b)
+b.append(10)
+print('Value of a after:', b)
+
+Float:
+print('Value of a before:', b)
+b.append(5.43433554)
+print('Value of a after:', b)
+
+Appending a and b:
+print('Value of a before:', b)
+b.append(a)
+print('Value of a after:', b)
+
+Positive Indexing:
+value= b[0]	value= b[1]	value= b[2]	
+print(value)    print(value)    print(value)   
+
+Negative Indexing:
+value= b[-1]	value= b[-2]	value= b[-3]
+print(value)    print(value)	print(value)	
+
+Inserting: Not replace but added
+b.insert(0,"Ten")
+print(b) 
+
+Removing:
+b.remove([])
+print(b)
+
+Pop: used to remove last elements
+popped_value = b.pop()
+print('list b',b)
+print(popped_value)
+
+Reverse Method:
+b.reverse()
+print(b)
+
+Ordered: allows to store duplicate value, the added value will go on last index
+b.append(10)
+print(b)
+
+Count:
+count_value= b.count(10)
+print(count_value)
+
+Length:
+num_elements = len(b)
+print(num_elements)
+
++ operator 
+a=[1,2]
+b=[3,4]
+result=a+b
+print(result)
+
+Extend() method:
+a.extend(b)		b.extend(a)
+print('list a',a) 	print('list a',a)
+print('list b',b)	print('list b',b)
+
+Sort(): to use and be same in the program
+a.sort(reverse=True)	b.sort(reverse=True)	
+print(a)		print(b)		
+
+To sorted:
+sorted_b= sorted(b) 	sorted_a= sorted(b)
+print(sorted_b)		print(sorted_a)
+
+Clear: to clear all elements
+a.clear()
+print(a)
+
+List Comprehension:
+lst=[1,2,3]
+lst=[val**2 for val in lst]
+lst

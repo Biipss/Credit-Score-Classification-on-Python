@@ -1,0 +1,228 @@
+PANDAS
+MATPLOTLIB
+
+
+describe()
+
+info()-columns ma NAN shell katii ota cha ra empty shell katii ota cha tesko info dincha
+datatype obj bhnyo kii string value bujne
+
+inplace-jun dataframe ma kaam gareko teii dataplace ma replace gardincha naya banaudaina
+
+dropna(inplace=True)-removes empty shell from row
+
+fillna('value',inplace=True)-empty shell bhako thau ma tyo haleko value jancha
+df['column_name'].fillna(0,inplace=True)-replaces Nan value from column
+
+Mean mode ra median value dekhaucha
+num_emp_mean=df['Number of employees'].mean() .median() .mode()
+df['Number of employees'].fillna(num_emp_,eam,inplace=True)
+
+rename garcha column ko name:
+df.rename(colums=
+	{'old_column_name':'new_column_name'}
+	inplace=True
+)
+
+adding new rows garne tarika:
+dictionary create garne
+
+new_data={'column_name':'value'} //dictionary data matra ho dataframe ma add bhako chaina 
+add garna laii naya dataframe ma halera anii purano sanga concatenate garne
+new_row=pd.DataFrame(new_data,index=[0])
+df=pd.concat([new_row,df).reset_index(drop=True)
+
+naya row thapyo bhne jaile top ma add huncha anii indexing ko value 0 0 naya ra purano ko top ma bhako same huncha 
+tesaile paila index lai reset gardina parcha
+
+df=df.reset_index(drop=True)
+df.head()
+
+drop_duplicates()-dataframe ma bhako sabaii duplijcate elements laii hataidiincha
+df=df.drop_duplicates(subset=['column_name1','column_name2'],keep='last')
+yesto case ma chaii duitaii column ma same value cha bhaye remove gardincha
+
+nunique()-number of unique value dekhaucha
+reset_index()- le bhako index hatayera naya index lyaidincha
+
+---------- MATPLOTLIB --------------
+mat-matrix
+//to plot the data
+//to display data
+pip install matplotlib (in workshop env anaconda prompt)
+
+matplotlib.__version__ #version check
+
+data import gareko numpy array ma rakhna parxa thats why import numpy as np
+
+xpoints = np.array([2, 5])
+ypoints = np.array([3, 10])
+startpoint(2,3) endpoint(5,10)
+plot(xpoints, ypoints) function to plot the graph
+plt.show //visualize the points
+
+//plot multiple points with line in the graph(points join garda curve)
+xpoints = np.array([2, 3, 4, 5])
+ypoints = np.array([3, 5, 6, 3])
+//These multiple points can be drawn without line using o or x. It gives o or x in the points specified without joining the line
+
+MARKER: o-circle
+plt.plot(xpoints, ypoints, 'o') //o can be replaced by x
+plt.show()
+
+//marker o along with the line
+plt.plot(xpoints, ypoints, marker='o')
+plt.show()
+
+Format the line and markers with 'fmt'
+marker|line|color
+plt.plot(xpoints, ypoints, 's:g') //s{square} marker, :{dotted line} line, g{green} color)
+
+Marker Size //to change marker size ms argument is used
+plt.plot(xpoints, ypoints, 's:g', ms=10)
+
+Marker edge color
+plt.plot(xpoints, ypoints, 's:g', ms=10, mec='r')//marker's border red
+
+Marker Face color
+plt.plot(xpoints, ypoints, 's:g', ms=10, mec='r', mfc='k')//marker ko color changed to black edge is still black and line still green
+
+#color values can be chnaged using hex values
+
+CONTROL LINES
+plt.plot(xpoints, ypoints, ls='--', c='g', linewidth='4')
+ls-line style
+c-color
+linewidth- thickness
+
+PLOT MULTIPLE LINES
+//numpy helps to add value to existing array
+
+xpoints_1, ypoints_1 = xpoints+1, ypoints+1
+print(xpoints, ypoints)
+print(xpoints_1, ypoints_1)
+plt.plot(xpoints, ypoints)
+plt.plot(xpoints_1, ypoints_1)
+plt.show()
+
+//by default color in lines
+//to customize the color of line
+xpoints_1, ypoints_1 = xpoints+1, ypoints+1
+print(xpoints, ypoints)
+print(xpoints_1, ypoints_1)
+plt.plot(xpoints, ypoints,c='k')
+plt.plot(xpoints_1, ypoints_1)
+plt.show()
+
+LABELS AND TITLE
+plt.plot(xpoints, ypoints)
+plt.xlabel('x-label') //horizontal title in x axis
+plt.ylabel('y-label') //vertical in y-axis
+plt.title('Title') //title name in center top
+plt.show()
+
+FONT PROPERTIES
+font1 = {'family':'serif','color':'blue','size':10}
+plt.xlabel('x-label', fontdict=font1)
+
+POSITION THE TITLE
+The title is placed in left, right and center using loc attribute
+plt.title('Title', loc='center')
+
+ADDING GRID TO GRAPH
+plt.grid() //both vertical and horizontal gridlines
+plt.grid(axis='y') //horizontal grid lines 
+plt.grid(axis='x') //vertical grid lines
+
+LINE PROPERTIES FOR GRID
+Attributes: color, linestyle, linewidth
+plt.grid(color='green', linestyle='--', linewidth=2)
+
+DEFAULT X-VALUES
+if only one array value is taken theat array stays in y axis and default x axis value is auto generated(x is increased by 1 )
+y_vals = np.array([2, 4, 0, 3, 9, 3])
+//default x	=> 0  1  2  3  4  5
+plt.plot(y_vals)
+plt.show()
+
+SUBPLOT
+nrows = 2
+ncols = 2
+//2rows 2 cols 
+plt.subplot(nrows, ncols, 1) #divided into 4 parts (1) following points is plotted in 1st area
+x = np.array([1, 2, 3, 5])
+y = np.array([3, 1, 9, 6])
+plt.plot(x, y)
+
+plt.subplot(nrows, ncols, 4)  #divided into 4 parts (1) following points is plotted in 4th area
+x = np.array([2, 4, 8, 9])
+y = np.array([0, 2, 1, 5])
+plt.plot(x, y)
+
+plt.subplots//single axis supports
+plt.title("first") // to place title in diff plot in graph
+plt.suptitle("Title") //to place the title of overall graph
+
+SCATTER PLOT
+scatter method to plot scatter
+plt.scatter(x, y)
+
+//The scatter points can be given custom color
+plt.scatter(x, y, color='g')
+plt.scatter(x1, y1, color='k')
+
+LEGEND TO GRAPH
+plt.legend() //matplotlib places the legend in empty regions
+
+BAR CHART
+The bars can be placed in vertical and horizontal ways.
+x = np.array(["car", "bike", 'truck', 'bicycle'])
+y = np.array([3, 8, 4, 6])
+plt.bar(x,y) //vertical bar chart
+plt.bar(x,y,  color='g') //The color of the bar can be customed
+plt.bar(x, y, width=0.5) //The width of the bar can be set
+
+horizontal bar chart
+x = np.array(["car", "bike", 'truck', 'bicycle']) #displayed in yaxis
+y = np.array([3, 8, 4, 6])
+
+plt.barh(x,y) 
+plt.barh(x, y, color='k',height=0.2) //color and height of bar defined
+
+HISTOGRAM-plt.hist(x)
+np.random //generates array of random numbers
+np.random.normal(size=100) // generates random 100 numbers in normal distribute
+np.random.normal(size=100)*100 //*100 integer 
+x = np.random.normal(size=100) * 100 //histogram is generated in normal distribution (it has +ve and -ve values)
+x = abs(np.random.normal(size=100) * 100) //makes all the negative num positive //histogram is generated: skewed along xaxis (+ve values)
+
+np.random.normal //Normal Distribution
+np.random.uniform //Uniform Distribution
+np.random.randInt
+
+plt.hist(x, edgecolor='k') //border in bars
+
+PIE CHART
+35*3.6= gives angle for value-35
+
+x = np.array([35, 25, 25, 15])
+plt.pie(x)
+
+//add labels to piechart
+x = np.array([35, 25, 25, 15])
+labels = ['car', 'bike', 'truck', 'bicycle']
+plt.pie(x, labels=labels)
+
+explodes //piechart ko part alikati baira niskeko jasto dekhxa
+x = np.array([35, 25, 25, 15])
+labels = ['car', 'bike', 'truck', 'bicycle']
+explodes = [0.1, 0, 0.05, 0]
+plt.pie(x, labels=labels, explode=explodes)
+
+
+
+
+
+
+
+

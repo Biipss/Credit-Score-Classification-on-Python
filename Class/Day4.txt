@@ -1,0 +1,258 @@
+If Else Condition:
+condition=[1]			//Integer
+if condition:
+  print("Inside if condition")
+else:
+    print("Inside else condition")
+
+condition=[False]			//Boolean
+if condition:
+  print("Inside if condition")
+else:
+    print("Inside else condition")
+
+condition = False
+condition2 = False
+value=1 if condition else 2 if condition2 else 3
+print(value)
+
+If condition:
+if condition: val=5
+print(val)
+
+SWITCH CASE:
+arg = 2
+match arg:
+    case 0:
+        print("case 0")
+    case 1:
+        print("case 1")
+    case 2:
+        print("case 2") 
+OUTPUT= 2
+
+arg = 3
+match arg:
+    case 0:
+        print("case 0")
+    case 1:
+        print("case 1")
+    case 2:
+        print("case 2") 
+OUTPUT= (Khali hunxa tara error chai aaudaina)
+
+LOOPS:
+WHILE:
+i = 0
+while i<3:
+    print('value of i', i)
+    i += 1
+
+BREAK:
+i = 0
+while i<7:
+    i += 1
+    if i==5:
+        print("Break code will be executed for value of i equals to ", i)
+        break
+    print('value of i', i)
+
+CONTINUE:
+i = 0
+while i<7:
+    i += 1
+    if i==5:
+        print("skipped for value ", i)
+        continue
+    print('value of i', i)
+
+FOR LOOP:
+names_list = ["Ram", "Shyam", "Hari"]
+for name in names_list:
+  print(name)
+
+O ma Ram
+1 ma Shyam 
+2 ma Hari
+
+RANGE:
+ range(first,last) = it include first and excludes last
+ range(0,5)
+
+GENERATOR:	range ko array memory ma rakhdaina because it takes large space tara generator lay euta object banayera store garxa ani euta matra store ni 		pugne gari
+
+INDEX ON RANGE:
+for idx in range(0, len(names_list)):
+    print(names_list[idx])
+OUTPUT:
+Ram
+Shyam 
+Hari
+
+TUPLE ON RANGE:
+names_tuple = ("Ram", "Shyam", "Hari")
+for name in names_tuple:
+  print(name)
+
+FOR LOOP ITERATE ON STRING:
+text = 'Students in NCCS are studious.'
+for character in text:
+    print('character is ', character)
+
+OUTPUT:
+character is  S
+character is  t
+character is  u
+character is  d
+character is  e
+character is  n
+character is  t
+character is  s
+character is   
+character is  i
+character is  n
+character is   
+character is  N
+character is  C
+character is  C
+character is  S
+character is   
+character is  a
+character is  r
+character is  e
+character is   
+character is  s
+character is  t
+character is  u
+character is  d
+character is  i
+character is  o
+character is  u
+character is  s
+character is  .
+
+for ele in [1, 2, 3]:
+ if ele == 2:
+  print('break executes')
+  break
+else:
+  print("else executes")
+OUTPUT:
+break executes
+
+ for ele in [1, 2, 3]:
+    print(f"value is{ele}")
+    if ele == 2:				//for ko bhitra if huna parxa natra error it is intentation 
+      print('break executes')			//for
+      break					    if
+  else:
+    print("else executes")
+OUTPUT:
+value is1
+value is2
+break executes
+
+....PYTHON MA DO WHILE HUDAINA....
+
+FUNCTION: IT CAN RETURN JATI PANI VALUE
+function define garna 
+def function_name
+
+# Define a function
+def calculate_square(value):
+    squared_value = value * value
+    return squared_value
+
+# Calling a function
+result = calculate_square(5)
+print(result)
+
+default case ma tuple huncha jaba hamile variable ko case matra halchau
+
+Classification of function call on the basis of writing arguments:
+Positional arguments
+kKeyword arguments
+Default arguments
+Variable-length arguments
+Variable-length Keyword-arguments
+
+Argument ra parameter ko difference:
+variable define garne bhaneko parameter
+variable call garne bhaneko argument
+
+default argument:
+parameter ma define huncha
+default value bhaneko suru ma naii halchau 
+eg def function(a,b,c=1) //yesma 1 bhaneko c ko default value huncha
+
+default argument halisake pachii pachadi positional value halna mildaina 
+eg def function(a,b,c=1,d) //yesarii mildaina
+eg def function(a,b,d,c=1) //yesarii milcha
+
+def function(a,b,c,*arg) //jati panii value sabai *arg ma assign huncha first ko 3 ta chaii a,b,c ma assign huncha
+
+Examples of arguments
+Positional Arguments
+def temp_func(a,b):
+    c=a+b
+    return c
+
+temp_func(5,5)
+
+Keyword Arguments
+def temp_func(a,b):
+    c=a+b
+    return c
+
+temp_func(a=5,b=5)
+
+Default Arguments
+def temp_func(a,b=0):
+    c=a+b
+    return c
+
+temp_func(a=5)
+temp_func(7)
+temp_func(5,7)
+
+Variable-length arguments
+def temp_func(a,*args):
+    print(a,type(a))
+    print(args,type(args))
+
+temp_func(4,5,6)
+temp_func(1,2,3,4)
+
+Variable-length Keyword-arguments
+def temp_func(a,**kwargs):
+    print(a,type(a))
+    print(kwargs,type(kwargs))
+    
+temp_func(3,b=4)
+temp_func(1,b=2,c=3,d=4)
+
+Lambda function:
+without any function method
+Syntax: lambda [arg1, [arg2,..., argn]]: expression
+
+# function defination
+    product = lambda arg1, arg2: arg1*arg2
+    result = product(1, 2)
+    print(result)
+
+product bhaneko lambda function laii represent garne variable
+
+Global ra local variables:
+value=0
+def function():
+    global value
+    print('from local space:',value)
+    value+=1
+
+print('from global space:',value)
+function()
+print('from global space:',value)
+OUTPUT:
+from global space: 0
+from local space: 0
+from global space: 1

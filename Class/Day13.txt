@@ -1,0 +1,31 @@
+(Classification.ipynb)
+Classification Problem
+a. Confusion Matrix
+b. Accuracy
+c. F1-Score
+d. Recall
+e. Precision
+
+CLASSIFICATION STEPS
+1. Necessary Library Import.
+2. Data Load
+3. EDA
+	I. Null-Value Check 
+		-Remove/Fill
+	II. Duplicated Rows
+		-Remove
+4. Feature Engineering(To know feature importance)
+	-Correlation
+	-Removed Poorly Correlated Columns
+5. Split into independent and dependent features(X, y)
+6. Train-Test Split
+	(X_train, X_test),
+	(y_train, y_test)
+7. Logistic Regression Check 
+8. Classify
+9. Prediction
+10. Metrics(Accuracy/Loss Check)
+
+Precision range 0-1
+Recall range 0-1
+Higher the f1 score the better the model is.

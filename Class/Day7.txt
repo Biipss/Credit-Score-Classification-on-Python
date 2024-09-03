@@ -1,0 +1,236 @@
+Numpy:    //can change the array.
+Numpy are mainly focused on numbers.
+
+import numpy as np
+print(np.__version__)
+
+Numpy:
+numpy chaii [1 2 3 4] bhanera output aucha 
+numpy ko data type numpy.ndarray ho
+numpy array chaii mainly focus on numbers
+
+# Create ndarray object using array() function
+arr = [1, 2, 3, 4]
+np_arr = np.array(arr)
+print(type(np_arr), np_arr)
+
+Dimension in numpy array
+0 D array:
+shape size keii hudaina just euta value huncha 
+
+1 D array:
+consists 0D array
+euta matra label huncha ra tesbhitra list haru tanna huna sakcha 
+arr = np.array([11, 12, 13, 14, 15])
+
+print(arr)
+print(type(arr))
+print(arr.shape)
+
+2D array:
+consists 1D array i e 1D array chaii store garcha 
+matrix represent garcha
+yesma matrix ko harek list ma row ko data lekhne eg: [[1,2,3],[4,5,6],[7,8,9]]	[1,2,3
+										4,5,6
+										7,8,9] yesto huncha 3x3 
+
+3D array:
+2D array chaii as a element huncha
+arr = np.array([[[1, 2, 3], [4, 5, 6]], [[1, 2, 3], [4, 5, 6]]])
+
+print(arr)
+print(type(arr))
+print(arr.shape)
+
+4D array:
+consists 3d array 
+arr = np.array([[[[1, 2, 3], [4, 5, 6]], [[1, 2, 3], [4, 5, 6]]]])
+
+Determine shape of array with shape attribute:
+.shape le yesko shape represent garna sakcha
+
+Determine number of of dimensions of ndarray object:
+.ndim bhanne attribute huncha 
+dimension katii cha bhanera dekhaucha
+Eg arr = np.array([[1, 2, 3], [4, 5, 6]])
+print('Num of dim in arr: ', arr.ndim)
+
+maximum 32 dimension samma matra lina sakcha numpy le
+4d bhanda higher dimension chaiyo bhne k garne bhanda
+ndmin bhanne attribute ma value rakhne
+
+import numpy as np
+arr = np.array([21, 22, 23, 24], ndmin=6)
+print(arr)
+print('Num of dim in arr: ', arr.ndim)
+
+numpy ma nii indexing garne tarika same naii huncha 
+1D array indexing:
+arr = np.array([1, 2, 3, 4])
+print(arr[0])
+print(arr[1])
+
+2D array indexing:
+arr = np.array([[1,2,3,4,5], [6,7,8,9,10]])
+print(arr[0, 1])
+
+3D array indexing:
+arr = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
+print(arr[0, 1, 1])
+
+Negative indexing:
+arr = np.array([1, 2, 3, 4])
+print(arr[-1])
+
+Array Slicing:
+1D array:
+[start:end:step]
+step deko chaina by default 1 huncha
+start chaina bhaye by default 0 aucha
+arr = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+print(arr[1:5]) //1 index ma bhako aucha tara 5 ko audaina 5 bhanda ek less ko aucha
+print(arr[1:]) //1 index ma bhako pachii sab aucha
+print(arr[:3]) //0 index bata 3 bhanda ek less ie 2 samma aucha
+
+Negative Indexing:
+print(arr[-4:-3]) 
+print(arr[-2:])
+print(arr[:-5])
+
+2D array:
+arr = np.array([[1, 2, 3, 4, 5, 6],[7, 8, 9, 10, 11, 12]])
+print(arr)
+print(arr[0, 1:6]) //0 bhaneko index ko elemnts ie 1,2,3,4,5,6 ani 1:6 bhane pachii 1 dekhyy 5 samma ko index auna paryo 
+print(arr[0:2, 0]) //0:2 bhaneko 0 1 ma bhako index ko 0 value aune bhayo
+print(arr[:,0] //: chaii suru dekhy last samma naii denote garcha that means sab aucha first list ma bhako
+
+Data types
+.dtype bhanne attribute le dincha
+data type jaile eutaii huna parcha 
+
+import numpy as np
+arr = np.array([1, 'banana', 'cherry'], dtype='i')
+print(arr.dtype) 
+yo erro aucha kina bhane data type ma int hale cha tara value hamile string ma deko cha 
+BUT
+import numpy as np
+arr = np.array([1, '2', '2'], dtype='i')
+print(arr.dtype)
+Yo chaii error audaina kina bhane tesma chaii '2' typecasting huncha
+
+Converting data type of existing array:
+.astype('i') le chaii convert garna help garchaie integer ma lagcha
+arr = np.array([5.8, 6.4, 7.3])
+new_arr = arr.astype('i')
+print(new_arr)
+print(new_arr.dtype)
+
+Copy and view:
+copy() le chaii naya array banaucha tara view() le chaii teii existing array laii reference or represent matra garcha
+
+copy() ko eg:
+import numpy as np
+arr = np.array([1, 2, 3, 4, 5])
+print(arr)
+x = arr.copy()
+arr[0] = 42
+print(arr)
+print(x)
+
+view() ko eg:
+import numpy as np
+arr = np.array([1, 2, 3, 4, 5])
+x = arr.view()
+arr[0] = 42
+print(arr)
+print(x)
+
+.base bhanne euta attribute cha josle chaii copy ho kii view object ko tha pauna sakcha
+value keii ayena bhne copy gareko object bhayo 
+value ayo bhne chaii output ma reference garne kaam garcha
+
+Reshape:
+.reshape(3,4) //12 ota element huncha so that means row ra column multiply garyo bhne teta bhayeko elements jati huna auna parcha
+
+arr = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+arr2 = arr.reshape(3, 4)
+
+3d ko kura 1d ma lyauna paryo kii arr0 = arr3.reshape(-1)
+print(arr0) garne
+
+suppose hamilaii num of elements tha chaina ra hamilaii reshape ma lyauna paryo ki //kunai euta matra dimension ma halna paucha
+import numpy as np
+arr3 = arr.reshape(2, 2, -1) //-1 kunai euta dimension ko laii matra dina sakincha tara agadii halne value ko products thyakka divisible by no of elements huna parcha
+print(arr3)
+
+flatten() le garne bhaneko jati dimension ma bhaye nii 1d ma convert gardincha
+print(arr3.flatten())
+
+
+
+Iterating over arrays:
+1D array
+arr = np.array([1, 2, 3, 4, 5, 6, 7, 8 , 9, 10, 11, 12])
+
+for ele in arr:
+    print(f"element is: {ele}\n")
+
+2D array:
+# Iterating on 2-D array
+import numpy as np
+arr = arr.reshape(3, 4)
+print(arr)
+
+for ele in arr:
+    print(f"\nelement is: {ele}") yesarii garyo kii ekchoti ko mara loop aucha 
+
+duita case garera bhitra ko element dekhauna milcha
+1. array bhitra array banaune
+2. np.nditer(array_name):
+	print
+
+# Iterating using nditer()
+import numpy as np
+
+for x in np.nditer(arr):
+    print(f'nditer  element {x}')
+
+# Iterating with different step size
+import numpy as np
+for x in np.nditer(arr[:, ::2]): //each elements euta euta skip garcha
+    print(x)
+
+np.ndenumerate()-index ra usko value laii tuple ma halne kaam garcha [(index,value)]
+import numpy as np
+for idx, x in np.ndenumerate(arr):
+  print(idx, x)
+YO BHANEKO LIST KO CASE MA HO
+
+
+Joining elements for 1d array
+.concatenate() use garcha
+# Joining with concatenate() for 1-D
+import numpy as np
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+
+arr = np.concatenate((arr1, arr2))
+print(arr)
+
+Joining elements for 2d array
+axis=0 bhaneko 1st dimension
+axis=1 cha bhaye 2nd dimension
+# Joining with concatinate() for 2-D
+# axis -> 0 is along 1st dimension
+# axis -> 1 is along 2nd dimension
+arr1 = np.array([[1, 2], [3, 4]])
+arr2 = np.array([[5, 6], [7, 8]])
+arr = np.concatenate((arr1, arr2), axis=0)
+print(arr)
+
+stack()
+stack ra concatenate ustaii ho
+result haru sab eutaii aucha
+hstack()
+vstack()
+dstack()

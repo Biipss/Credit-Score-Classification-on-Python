@@ -1,0 +1,80 @@
+Comments:
+# for single line comments
+
+Indentation:
+Use TAB instead of space.
+
+Variables:
+Use single avoid double
+No space no hypun
+
+print(...)
+type(variable name) 	 //It will define all itself	(PYTHON IS FUNCTIONAL LANGUAGE).
+
+For swapping
+a=5 b=6
+a,b = b,a
+
+Snake Case
+underscore is used to seperate which helps to read (Example: College_name)
+
+Camel Case
+Eg: computerName
+
+Pascal Case
+Each word start with capital letter
+Eg: ComputerName
+
+To count the length of the string:
+var='NCCS is'
+var2="college"
+len(var)  //to get the length
+print(var,var2,"nice")
+
+Format() Function:
+var="Number is {}",format(81);
+print(var)
+Output: Number is 81.
+
+var="Number is {1} {0}".format(54,65);
+print(var);
+Output: Number is 65 54. //Index aunsar print hunxa.
+
+String Method:
+formating with {} method'.format('format()')   //format() function ...puts value in placeholder
+//multiple in garna milcha index use harna pani milcha 
+'hello {1} {0}'.format('ajsdjgagskj',5)
+'number is {val} {txt}'.format(txt="akshd",val=5)    /using var_name
+
+//using f-string
+agr=5
+txt=f'he is {age} years old'
+print(txt)                                   //MOST easy to use
+len() - to count the length of the string
+upper() - convert string into upper case
+lower() - convert string into lower case
+title() - convert first character of a string of each word to capital
+swapcase() - convert uppercase to lowercase or vice versa of string
+capitalize() - converts first letter of sentence of a string to uppercase
+endswith() - sentence k bata end vako xa declare garyo vanera boolean value dinxa i.e true or false
+startswith() - sentence k bata start vako xa declare garyo vanera boolean value dinxa i.e true or false
+strip() - removes whitespace of start and end side of the string
+  lstrip()- removes left whitespace
+  rstrip()- removes right whitespace
+split() - split ma value diyeko aadhar ma string chutauxa
+replace() - what should be replaced with the value of string  //Syntax: var_name.replace('What should be replace','The replaceable value');
+
+Integer - numbers
+Float - decimal number
+Boolean - true or false  (1= true 0=false)
+
+Operators:
+a++ is not used in python
+a=a+1 is used to increase the value of a.
+
+a-- is not used in python
+a=a-1 is used to decrease the value of a.
+
+Power:
+2**2 = 2 ko power 2
+3**8 = 3 ko power 8

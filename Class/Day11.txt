@@ -1,0 +1,47 @@
+Get data(csv_file)
+Load data(DataFrame)
+Clean data
+EDA(Feature Engineering)
+Feature Select
+Identify Features and Target
+Train Test Split
+Algorithm Train
+Prediction
+Loss
+
+LINEAR REGRESSION
+y=0o + 01x1+ 02x2+......+ 0nxn
+y:dependent variable
+x1_xn:independent variable
+0:Thita
+01_0n:weight of features/parameter of model
+0o: bias term
+
+COST OR LOSS FUNCTION
+If the actual point is near the predicted point, it gives less loss.The farther the actual point is from the predicted point, the more loss it has.
+
+SEABORN(pip install seaborn)
+-high level plotting library in graphical way(greater visuals)
+
+GRADIENT DECENT
+
+ML.ipynb
+8 cols- divide into:features(7) | Y
+
+sns.heatmap(data.corr(), annot=True, cmap="Blues")
+data.corr() //correlation
+annot=True (shows value in the cell if it is true)
+cmap="BLUES" (uses shades of same color) 
+//cmap-diff shades of blue to display the cells in the image
+
+Train Test Split
+Training the model
+//5 input features
+0- Thita is weight of features
+y=0o + 01x1+ 02x2+ 03x3 + 04x4+ 05x5
+
+Coefficient value of 01x1 to 05x5
+pd.DataFrame(lr_model.coef_, X.columns, columns=['coefficient'])
+
+range(10)
+makes iterable object from 0-9	

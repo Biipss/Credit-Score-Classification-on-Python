@@ -1,0 +1,108 @@
+Error Handling:
+try:
+    value1/value2 #1/0
+except:
+    print('error can be occured')
+   # print('zero cannot be divisor')			
+
+try:
+    value1/value2
+except Exception as e:
+    print(e)			        //Exception is used to catch the error and inform us which occur in the program
+
+lst=[1, 2, 3, 4]
+try:
+    #value1/value2
+    lst[4]
+except ZeroDivisionError as e:		//ZeroDivisionError cannot handle index error
+    print(e)				
+
+lst=[1, 2, 3, 4]
+try:
+    #value1/value2
+    lst[4]
+except IndexError as e:			//IndexError can handel it
+    print(e)
+
+lst=[1, 2, 3, 4]
+try:
+    #value1/value2
+    lst[4]
+except IndexError as e:			
+    print(e)
+finally					//finally vaneko try ma issue aayo vane except ma janxa ani tya run hunxa ani final ma run hune ki nai hunxa.
+    print('error excuted')		//Both try ra except run vayeni navayeni finally jasarini run hunxa
+
+.............New Text File............
+
+file = open('file.txt','r') 		//J ma code lekhne lako tesmai huna parxa tyo  directory ma huna parxa
+
+file.close()				//to close file
+
+content = file.readline()		//Line by line read garxa ek ek choti ko run ma euta line dinxa
+print(content)
+
+............Line To Line..............
+content = file.readlines()
+
+print(content)
+
+OUTPUT:
+['The weather is cool.\n', 'We are in class.\n', "And we're studing Python."]
+
+for lines in content:
+    print(f"Line is:{lines}")				//In lines
+
+OUTPUT:
+Line is:The weather is cool.
+
+Line is:We are in class.
+
+Line is:And we're studing Python.
+
+
+...........Write............
+file = open('file.txt','w')
+
+text= 'He is good.'
+file.writelines(text)
+
+file.close()
+
+text= 'He is good. /nbeydedueuebejbej'        // /n is used to write in the next line
+file.writelines(text)
+
+...........Append............
+file = open('file.txt','a')
+
+new_txt= "hello, its me."			//to add in the text
+file.writelines(new_txt)
+
+file.close()
+
+OUTPUT:
+he
+is
+good
+hello, its me.
+
+.................................CLass Object..............................
+class ClassName:
+        class_variable=1
+
+obj = ClassName()
+print(obj.class_variable)
+
+..............Constructor Function...................
+ __init__ is used  //double underscore
+
+def __init__(self, name, age): //function call garesi self use hunxa jaslai object vanera hunxa
+
+..............Attribute manipulation with function...............
+
+- getattr(obj, name) > access attribute value
+- hasattr(obj, name) > check if attribute exists.
+- setattr(obj, name, value) > set attribute with value.
+- delattr(obj, name) > delete attribute.
+
+

@@ -1,0 +1,15 @@
+.......................................................................................................................................
+
+ANACONDA
+
+python --version
+
+pip list
+
+conda create -n workshop python=3.11
+
+conda env list
+
+conda activate workshop
+
+pip list

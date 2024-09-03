@@ -1,0 +1,170 @@
+TUPLE
+SET
+DICTIONARIES
+
+
+
+Slicing operation:
+Syntax[start 'end' step]
+
+jastaii index 2 samma chaiyo bhne hamile 3 mention garna parcha i.e. chaiyeko step bhanda ek step badii line
+list= [1,2,3,4,5,6,7,8]
+print(list[2:6]) //op: 3 dekhy 6 samma aucha
+
+By default [:] matra lekhyo bhne min index to max index afaii mention huncha //op:sabaii aucha
+
+print(list[::2]) garyo bhne index 0 2 4 6 lincha 
+print(list[1::2]) garyo bhne index 1 3 5 lincha
+
+Tuple:() represent huncha
+duita tuple ko value eutai tuple ma halna sakchau 
++ operator is used to concatenate two tuples
+
+Alternative way to convert into list add element and again converting back to tuple
+print(f"tup_c before {tup_c} datatype {type(tup_c)}")
+tup_c=list(tup_c)
+print(f"tup_c after type casting {tup_c} datatype {type(tup_c)}")
+tup_c.append(5)
+print(f"tup_c after adding element {tup_c} datatype {type(tup_c)}")
+tup_c=tuple(tup_c)
+print(f"tup_c after type casting {tup_c} datatype {type(tup_c)}")
+
+
+Unpacking of tuple
+harek data laii individual variable dine
+Eg:
+tup_c=(1,2,3)
+a,b,c= tup_c or (1,2,3)
+print(f"a={a}, b= {b} , c={c}") //garyo bhne a=1 b=2 c=3 huncha
+
+Negative Indexing:
+print(tup_c[-2)
+
+duplicate value store garna milcha
+
+del()-delete the tuple
+del tup_e
+
+
+Set:
+set()-initialize the aset constructor
+set_a= set() //empty set
+print(type(set_a) 
+
+set_b={1} matra diyo bhne yo set initialize hudaina last ma comma dina parcha
+set_b={1,} 
+
+set_a.add() le naya value add garna milcha
+update()-use to add other complex data types such as list
+
+can store different data types: tara primitive laii matra 
+set_c={1,'Hi'}
+print(set_c)
+
+len()-counts the length of set
+
+remove()-removes the value of a set
+set_z.remove(8)
+print(set_z)
+nabhako value remove garna khojyo kii hudaina error aucha 
+
+discard()
+set_z.discard(10) //10 value set ma chaina ra discard ma tyo value haleko cha bhaye op same aucha tara error audaina
+
+pop()-removes the element of a popped item
+
+union()-duita variable laii jodcha or concatenate ra naya set return garcha
+a={1,2}
+b={3,4}
+c=a.union(b)
+print(c)
+
+
+intersection()-duita variable ko common element select garcha
+a={1,2,3,4}
+b={3,4}
+c=a.intersection(b)
+print(c)
+
+intersection_update()-naya set banaudaina j mention cha teslaii update gardincha
+a={1,2,3,4}
+b={3,4}
+a.intersection_update(b)
+print(a)
+
+symmetric_difference()- naya set ma duita variable ko uncommon element haru select garcha
+a={1,2,3,4}
+b={3,4}
+c=a.symmetric_difference(b)
+print(c)
+
+symmetric_difference_update()- naya set banaudaina j mention cha tesma uncommon element haru select garera update garcha
+print(b)
+b.symmetric_difference_update(a)
+print(b)
+
+
+Dictionaries:
+Syntax: dict_1 = {Key1:value, Key2:Value,.....}
+Value duplicate huna payo tara key chaii unique huna paryo
+
+{} or dict()- used to initialize dictionary
+dict_a= dict() or {}
+print(type(dict_a))
+
+[]- dictionary bhitra key value kun huncha bhanera yo bracket define garne
+dict_a['animal'] = 'janawar'
+print(dict_a)
+
+data access garne tarika:
+print(dict_a["animal"])
+
+
+get()-key cha bhaye ta teii value return garcha yedii chaina bhaye none aucha
+teta bhako key halda: print(dict_a.get('animal')) //op value k cha tei aucha
+teta nabhako key halda:print(dict_a.get('reptiles')) //op none aucha
+
+keys()- kun kun key haru cha sab dekhaucha
+keys=dict_a.keys()
+print(keys)
+
+keys=dict_a.keys() #particular key haru cha kii chaina check or access garcha tara paila list ma convert garna parcha
+print(keys)
+keys=list(keys)
+print(keys)
+print(keys[0])
+
+values()-#retrives all the values kun kun value cha sab dekhaucha
+values=dict_a.values()
+print(values)
+
+values=dict_a.values() #particular value haru cha kii chaina check or access garcha tara paila list ma convert garna parcha
+print(values)
+values=list(values)
+print(values)
+print(values[0])
+
+#bhayeko key ko value update garne
+print(dict_a)
+dict_a['animal'] = 'hippo'
+print(dict_a)
+
+#pop le vaue udaidinchaa ra return pani garcha
+key= dict_b.pop('luzza')
+print(key)
+
+
+popitem()-#removes last element and returns a tuple
+dict_a={'key1':100, 'key2':30}
+key= dict_a.popitem()
+print(key)
+
+clear()-#sabai key ra value udaidincha
+dict_a={'key1':100, 'key2':30}
+key= dict_a.popitem()
+print(key)
+
+del()-#puraii tuple naii delete gardincha
+del dict_b['luzza']
+print(dict_b)
+
